@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BMICalculator</string>
+    <string name="label_male">Male</string>
+    <string name="label_female">Female</string>
+    <string name="label_height">Height (cm)</string>
+    <string name="label_weight">Weight (kg)</string>
+    <string name="label_calculate">Calculate BMI</string>
+    <string name="bmi_underweight">Underweight</string>
+    <string name="bmi_normal">Normal weight</string>
+    <string name="bmi_overweight">Overweight</string>
+    <string name="bmi_obesity1">Obesity I</string>
+    <string name="bmi_obesity2">Obesity II</string>
+    <string name="bmi_obesity3">Obesity III</string>
+    <string name="obesity3_alert_title">Attention !</string>
+    <string name="obesity3_alert_message">Your BMI may pose a very high risk to your health, please click accept to see recommendations</string>
+    <string name="obesity3_alert_positive_button">Accept</string>
+
+</resources>
