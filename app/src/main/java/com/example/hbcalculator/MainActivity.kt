@@ -1,4 +1,4 @@
-package com.example.bmicalculator
+package com.example.hbcalculator
 
 import android.content.Intent
 import android.net.Uri

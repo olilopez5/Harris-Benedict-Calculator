@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.bmicalculator"
+    namespace = "com.example.hbcalculator"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.bmicalculator"
+        applicationId = "com.example.hbcalculator"
         minSdk = 26
         targetSdk = 35
         versionCode = 1

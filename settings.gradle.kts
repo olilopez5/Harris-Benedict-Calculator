@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "BMICalculator"
+rootProject.name = "Harris-Benedict-Calculator"
 include(":app")
