@@ -13,29 +13,34 @@
 
 
     <!--Genero -->
-
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="8dp">
+        android:layout_weight="1"
+        android:layout_margin="0dp"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="8dp"
+        >
+
 
         <LinearLayout
-            android:layout_width="349dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="16dp">
+            android:padding="12dp">
 
             <Button
                 android:id="@+id/maleButton"
                 style="?attr/materialIconButtonFilledStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/label_male"
+
+
                 app:icon="@drawable/icon_male" />
 
             <Button
@@ -43,126 +48,117 @@
                 style="?attr/materialIconButtonFilledStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.85"
-                android:text="@string/label_female"
-                app:icon="@drawable/icon_female"
-                />
+
+
+                app:icon="@drawable/icon_female" />
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"/>
 
     </com.google.android.material.card.MaterialCardView>
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"/>
 
-    <!--Altura -->
-
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="wrap_content"
+    <!-- Edad-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ageTextField"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="8dp"
-     >
-        <LinearLayout
+        android:layout_weight="1"
+        android:hint="@string/label_age"
+        android:textColorHint="@color/black"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/label_height"
-                android:layout_gravity="center_horizontal"
-                android:textSize="24sp"/>
-
-            <EditText
-                android:id="@+id/heightTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="170"
-                android:layout_gravity="center_horizontal"
-                android:textSize="35sp"
-                android:textStyle="bold"
-                />
-
-            <com.google.android.material.slider.Slider
-                android:id="@+id/heightSlider"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:stepSize="1"
-                android:value="170"
-                android:valueFrom="50"
-                android:valueTo="300"
-                app:labelBehavior="gone"
-                app:tickVisible="false" />
-
-        </LinearLayout>
-
-</com.google.android.material.card.MaterialCardView>
+            />
 
 
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <!--Peso -->
+    </LinearLayout>
 
-    <com.google.android.material.card.MaterialCardView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="8dp">
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
 
-        <LinearLayout
+        <!--Altura -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/heightTextField"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/label_height"
+            android:textColorHint="@color/black"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"/>
+
+        <!--Peso -->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/weightTextField"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/label_weight"
+            android:textColorHint="@color/black"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <!--Activity level -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/activityLevel"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="¿Cuál es tu nivel de actividad física diaria?">
+
+        <AutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:text=""
+            android:inputType="none"
+            />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/label_weight"
-                android:textAlignment="center"
-                android:textSize="24sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:orientation="horizontal">
-
-
-                <Button
-                    android:id="@+id/minusButton"
-                    style="?attr/materialIconButtonFilledStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:icon="@drawable/icon_minus" />
-
-
-                <TextView
-                    android:id="@+id/weightTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_weight="1"
-                    android:text="75"
-                    android:textStyle="bold"
-                    android:textAlignment="center"
-                    android:textSize="35sp" />
-
-                <Button
-                    android:id="@+id/addButton"
-                    style="?attr/materialIconButtonFilledStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:icon="@drawable/icon_add"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-</com.google.android.material.card.MaterialCardView>
-
+    <!--Spinner widget-->
+    <Spinner
+        android:id="@+id/objectiveSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:layout_marginTop="8dp"/>
 
     <!--Boton Calcular -->
 
@@ -175,41 +171,6 @@
         android:textSize="25sp"
         android:text="@string/label_calculate" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="8dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-    <TextView
-        android:id="@+id/resultBMI"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text=" "
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp"/>
-
-    <TextView
-        android:id="@+id/descriptionTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text=" "
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp"/>
-
-
-</LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

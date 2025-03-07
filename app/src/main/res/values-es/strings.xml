@@ -4,6 +4,7 @@
         <string name="app_name">BMICalculator</string>
         <string name="label_male">Hombre</string>
         <string name="label_female">Mujer</string>
+        <string name="label_age">Edad :</string>
         <string name="label_height">Altura (cm)</string>
         <string name="label_weight">Peso (kg)</string>
         <string name="label_calculate">Calcular IMC</string>
