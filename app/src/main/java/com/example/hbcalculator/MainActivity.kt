@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -23,22 +24,6 @@ import kotlin.math.pow
 
 class MainActivity : AppCompatActivity() {
 
-    companion object {
-        val activityLevel = arrayOf(
-            "Sedentario: poco o nada de ejercicio al día",
-            "Actividad ligera: ejercicio 1-3 días a la semana",
-            "Actividad moderada: ejercicio 3-5 días a la semana",
-            "Actividad intensa: ejercicio 6-7 días a la semana",
-            "Actividad muy intensa: trabajo físico y ejercicio diario"
-        )
-        val objectiveList = arrayOf(
-            "Aumentar masa muscular",
-            "Bajar grasa corporal",
-            "Mantener el peso actual"
-        )
-    }
-
-
     lateinit var ageTextField: TextInputEditText
 
     lateinit var heightTextField: TextInputLayout
@@ -50,11 +35,13 @@ class MainActivity : AppCompatActivity() {
     //lateinit var resultTMB: TextView
     //lateinit var descriptionTextView: TextView
 
-    lateinit var activityLevel: TextInputLayout
-    lateinit var objectiveSpinner: Spinner
+    lateinit var aAcLevelAutoComplete: AutoCompleteTextView
+    lateinit var objectiveText: AutoCompleteTextView
 
     var height = 170.0f
     var weight = 75.0f
+    var activity = -1
+    var objective = -1
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,14 +54,6 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-        }
-
-        val nameTextField: AutoCompleteTextView = arrayOf()
-
-        val activities = resources.getStringArray(R.array.arrayActivities)
-
-        ArrayAdapter(this, android.R.layout.simple_list_item_1, activities).also { adapter ->
-            nameTextField.setAdapter(adapter)
         }
 
         initViews()
@@ -95,13 +74,13 @@ class MainActivity : AppCompatActivity() {
 //        var selectedActivity = activitySpinner.selectedItemPosition
 //        println("Nivel de actividad: ${activityLevel[selectedActivity]}")
 
-        var selectedObjective = objectiveSpinner.selectedItemPosition
-        println("Objetivo: ${objectiveList[selectedObjective]}")
+        activity = activityLevel
+        objective = objectiveText.selectedItemPosition
+        //println("Objetivo: ${objectiveList[selectedObjective]}")
 
         val result = weight / (height / 100).pow(2)
 
         //formateo de resultado para adaptarlo al idioma del telefono y dos decimales
-
         //resultBMI.text = String.format(Locale.getDefault(), "%.2f", result)
 
         var colorId = 0
@@ -163,11 +142,21 @@ class MainActivity : AppCompatActivity() {
         //resultBMI = findViewById(R.id.resultBMI)
         //descriptionTextView = findViewById(R.id.descriptionTextView)
 
-        //activitySpinner = findViewById(R.id.activitySpinner)
-        objectiveSpinner = findViewById(R.id.objectiveSpinner)
+
+        activityLevel = findViewById(R.id.acLevelAutoCompl)
 
 
+
+        //val activities = resources.getStringArray(R.array.arrayActivities)
+
+        acLevelAutoComplete.setOnItemClickListener { parent, view, position, id ->
+            activity = position
+        }
+
+
+        objectiveText = findViewById(R.id.objectiveAutoComplete)
         // Create the instance of ArrayAdapter
+        val objectiveList = resources.getStringArray(R.array.arrayObjective)
         val objectiveSpinnerAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, objectiveList)
         // set simple layout resource file for each item of spinner
         objectiveSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)

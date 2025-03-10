@@ -2,10 +2,14 @@
     <string name="app_name">Harris-Benedict-Calculator</string>
     <string name="label_male">Male</string>
     <string name="label_female">Female</string>
-    <string name="label_age">Age :</string>
+    <string name="label_age">Age </string>
     <string name="label_height">Height (cm)</string>
     <string name="label_weight">Weight (kg)</string>
+    <string name="hint_daily_activity">What is your daily physical activity level?</string>
+    <string name="hint_objective">What is your goal?</string>
+
     <string name="label_calculate">Calculate RMB</string>
+
     <string name="bmi_underweight">Underweight</string>
     <string name="bmi_normal">Normal weight</string>
     <string name="bmi_overweight">Overweight</string>
