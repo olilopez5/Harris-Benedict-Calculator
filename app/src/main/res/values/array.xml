@@ -2,19 +2,19 @@
 
 <resources>
     <array name="arrayActivities">
-        <item>"Sedentario: poco o nada de ejercicio al día"</item>
-        <item>"Actividad ligera: ejercicio 1-3 días a la semana"</item>
-        <item>"Actividad moderada: ejercicio 3-5 días a la semana"</item>
-        <item>"Actividad intensa: ejercicio 6-7 días a la semana"</item>
-        <item>"Actividad muy intensa: trabajo físico y ejercicio diario"</item>
+        <item>"Sedentary: little or no exercise per day"</item>
+        <item>"Light activity: exercise 1-3 days a week"</item>
+        <item>"Moderate activity: exercise 3-5 days a week"</item>
+        <item>"Intense activity: exercise 6-7 days a week"</item>
+        <item>"Very intense activity: physical work and daily exercise"</item>
     </array>
 
 
     <array name="arrayObjective">
-        <item>"¿Cual es tu objetivo?"</item>
-        <item>"Aumentar masa muscular"</item>
-        <item>"Bajar grasa corporal"</item>
-        <item>"Mantener el peso actual"</item>
+        <item>"What is your goal?"</item>
+        <item>"Increase muscle mass"</item>
+        <item>"Reduce body fat"</item>
+        <item>"Maintain current weight"</item>
     </array>
 
 </resources>

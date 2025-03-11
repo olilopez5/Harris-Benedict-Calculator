@@ -1,23 +1,51 @@
 <resources>
     <string name="app_name">Harris-Benedict-Calculator</string>
+
+    <string name="app_title">Harris-Benedict-Calculator</string>
+    <string name="app_description">
+        This automatic calculator tells you your total daily
+        calorie expenditure based on the Harris-Benedict formula,
+        the most popular and widely used one today.
+        Following this result, a section is included that allows
+        you to estimate how many calories you should consume to
+        gain weight (build muscle) or lose weight (cut).</string>
+
     <string name="label_male">Male</string>
     <string name="label_female">Female</string>
     <string name="label_age">Age </string>
+
     <string name="label_height">Height (cm)</string>
     <string name="label_weight">Weight (kg)</string>
+
     <string name="hint_daily_activity">What is your daily physical activity level?</string>
     <string name="hint_objective">What is your goal?</string>
 
-    <string name="label_calculate">Calculate RMB</string>
+    <string name="label_calculate">Calculate</string>
 
-    <string name="bmi_underweight">Underweight</string>
-    <string name="bmi_normal">Normal weight</string>
-    <string name="bmi_overweight">Overweight</string>
-    <string name="bmi_obesity1">Obesity I</string>
-    <string name="bmi_obesity2">Obesity II</string>
-    <string name="bmi_obesity3">Obesity III</string>
-    <string name="obesity3_alert_title">Attention !</string>
-    <string name="obesity3_alert_message">Your BMI may pose a very high risk to your health, please click accept to see recommendations</string>
-    <string name="obesity3_alert_positive_button">Accept</string>
+    <string name="balance">Your calories to maintain energy balance:</string>
+    <string name="balance_level">Caloric balance</string>
+
+    <string name="level">Level</string>
+    <string name="calories">kcal/day</string>
+
+    <string name="build_muscle">Your calories to be in a caloric surplus:</string>
+    <string name="light_surplus">Light surplus</string>
+    <string name="moderate_surplus">Moderate surplus</string>
+    <string name="aggressive_surplus">Aggressive surplus</string>
+    <string name="very_aggressive_surplus">Very aggressive surplus</string>
+
+
+    <string name="lose_weight">Your calories to be in a caloric deficit:</string>
+    <string name="light_deficit">Light deficit</string>
+    <string name="moderate_deficit">Moderate deficit</string>
+    <string name="aggressive_deficit">Aggressive deficit</string>
+    <string name="very_aggressive_deficit">Very aggressive deficit</string>
+
+    <string name="advice">Advice</string>
+    <string name="for_muscle_people">For more advanced people and greater muscle mass,
+        it may be more effective to use the Mifflin and St. Jeor formula.</string>
+
+
+
 
 </resources>

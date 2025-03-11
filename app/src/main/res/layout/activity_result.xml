@@ -1,46 +1,178 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <com.google.android.material.card.MaterialCardView
+    <TextView
+        android:id="@+id/SurplusResult"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/header_table"
+        android:text="@string/build_muscle"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-      >
+        android:stretchColumns="1"
+        android:paddingTop="8dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+        <!-- Fila para el Superávit Ligero -->
+        <TableRow>
             <TextView
-                android:id="@+id/resultRMI"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text=" "
-                android:textSize="50sp"
-                android:textStyle="bold"
-                android:layout_marginTop="16dp"/>
-
+                android:text="@string/light_surplus"
+                android:background="@color/light_x"
+                android:paddingEnd="18dp" />
             <TextView
-                android:id="@+id/descriptionTextView"
-                android:layout_width="match_parent"
+                android:id="@+id/lightSurplus"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/calories"
                 android:textAlignment="center"
-                android:text=" "
-                android:textSize="50sp"
-                android:textStyle="bold"
-                android:layout_marginTop="16dp"/>
+                android:background="@color/light_x"/>
+        </TableRow>
 
+        <!-- Fila para el Superávit Moderado -->
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/moderate_surplus"
+                android:paddingEnd="8dp"
+                android:background="@color/moderate_x"/>
+            <TextView
+                android:id="@+id/moderateSurplus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calories"
+                android:textAlignment="center"
+                android:background="@color/moderate_x"/>
+        </TableRow>
 
-        </LinearLayout>
+        <!-- Fila para el Superávit Agresivo -->
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/aggressive_surplus"
+                android:background="@color/aggressive_x"
+                android:paddingEnd="8dp" />
+            <TextView
+                android:id="@+id/aggressiveSurplus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calories"
+                android:background="@color/aggressive_x"
+                android:textAlignment="center" />
+        </TableRow>
+            <!-- Fila para el Superávit Muy Agresivo -->
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/very_aggressive_surplus"
+                    android:background="@color/very_aggressive_x"
+                    android:paddingEnd="8dp" />
+                <TextView
+                    android:id="@+id/veryAggressiveSurplus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/calories"
+                    android:background="@color/very_aggressive_x"
+                    android:textAlignment="center" />
+            </TableRow>
 
-    </com.google.android.material.card.MaterialCardView>
+    </TableLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/deficitResult"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@color/header_table"
+        android:text="@string/lose_weight"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1"
+        android:paddingTop="8dp">
+        <!-- Fila para el Déficit Ligero -->
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/light_deficit"
+                android:background="@color/light_x" />
+            <TextView
+                android:id="@+id/lightDeficit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calories"
+                android:background="@color/light_x"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <!-- Fila para el Déficit Moderado -->
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/moderate_deficit"
+                android:background="@color/moderate_x"/>
+            <TextView
+                android:id="@+id/moderateDeficit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calories"
+                android:background="@color/moderate_x"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <!-- Fila para el Déficit Agresivo -->
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/aggressive_deficit"
+                android:background="@color/aggressive_x"/>
+            <TextView
+                android:id="@+id/aggressiveDeficit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calories"
+                android:background="@color/aggressive_x"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <!-- Fila para el Déficit MUY Agresivo -->
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/very_aggressive_deficit"
+                android:background="@color/very_aggressive_x"/>
+            <TextView
+                android:id="@+id/deficitVeryAggressive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calories"
+                android:background="@color/very_aggressive_x"
+                android:textAlignment="center" />
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>
+

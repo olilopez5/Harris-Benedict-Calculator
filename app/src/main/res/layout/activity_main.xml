@@ -3,107 +3,110 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    tools:context=".MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingTop="150dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:gravity="center_horizontal"
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context=".activities.MainActivity"
     android:background="@color/background">
 
+    <!-- Barra superior con título -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary">
 
-    <!--Genero -->
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_title"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textColor="@android:color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Descripción debajo del título -->
+    <TextView
+        android:id="@+id/descriptionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_description"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textColor="@android:color/darker_gray" />
+
+    <!-- Género y Edad en una sola fila -->
     <LinearLayout
-        android:layout_width="400dp"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="12dp">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="12dp">
-
-            <Button
-                android:id="@+id/maleButton"
-                style="?attr/materialIconButtonFilledStyle"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/label_male"
-                app:icon="@drawable/icon_male" />
-
-            <Button
-                android:id="@+id/femaleButton"
-                style="?attr/materialIconButtonFilledStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/label_female"
-                app:icon="@drawable/icon_female" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"/>
-
-
-        <Space
-            android:layout_width="16dp"
-            android:layout_height="wrap_content"/>
-
-    <!-- Edad-->
-        <!--Altura -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/ageTextField"
+        <Button
+            android:id="@+id/maleButton"
+            style="?attr/materialIconButtonFilledStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:text="@string/label_male"
+            app:icon="@drawable/icon_male" />
+
+        <Button
+            android:id="@+id/femaleButton"
+            style="?attr/materialIconButtonFilledStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/label_female"
+            app:icon="@drawable/icon_female" />
+
+        <!-- Campo de Edad más pequeño -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ageTextField"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:hint="@string/label_age"
-            android:textColorHint="@color/black"
-            >
+            android:textColorHint="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                />
-
+                android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
 
+    <!-- Altura y Peso -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="8dp">
 
-        <!--Altura -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/heightTextField"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/label_height"
-            android:textColorHint="@color/black"
-            >
+            android:textColorHint="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-
+                android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <Space
             android:layout_width="16dp"
             android:layout_height="wrap_content"/>
-
-        <!--Peso -->
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/weightTextField"
@@ -111,20 +114,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/label_weight"
-            android:textColorHint="@color/black"
-            >
+            android:textColorHint="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-
+                android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
-
-
     </LinearLayout>
 
-    <!--Activity level -->
+    <!-- Nivel de actividad -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/activityLevel"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
@@ -134,17 +132,15 @@
         android:hint="@string/hint_daily_activity">
 
         <AutoCompleteTextView
-            android:id="@+id/acLevelAutoCompl"
+            android:id="@+id/acLevelAutoComplete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
             android:inputType="none"
-            app:simpleItems="@array/arrayActivities"
-            />
-
+            app:simpleItems="@array/arrayActivities"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!--Goal -->
+    <!-- Objetivo -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/objectiveText"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
@@ -159,19 +155,36 @@
             android:layout_height="wrap_content"
             android:text=""
             android:inputType="none"
-            app:simpleItems="@array/arrayObjective"
-            />
-
+            app:simpleItems="@array/arrayObjective"/>
     </com.google.android.material.textfield.TextInputLayout>
-    <!--Boton Calcular -->
 
+    <!-- Botón Calcular -->
     <Button
         android:id="@+id/calculateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
         android:layout_marginTop="16dp"
         android:textSize="25sp"
-        android:text="@string/label_calculate" />
+        android:text="@string/label_calculate"/>
+
+    <Space
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/balanceResultTextField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/balance"
+        android:textColorHint="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/kcalBalance"
+            android:layout_width="match_parent"
+            android:layout_height="47dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
 </LinearLayout>
+
