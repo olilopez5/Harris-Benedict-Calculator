@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var aAcLevelAutoComplete: AutoCompleteTextView
     lateinit var objectiveText: AutoCompleteTextView
+    lateinit var activityLevel: AutoCompleteTextView
 
     var height = 170.0f
     var weight = 75.0f
@@ -74,8 +75,8 @@ class MainActivity : AppCompatActivity() {
 //        var selectedActivity = activitySpinner.selectedItemPosition
 //        println("Nivel de actividad: ${activityLevel[selectedActivity]}")
 
-        activity = activityLevel
-        objective = objectiveText.selectedItemPosition
+        //activity = activityLevel.
+        //objective = objectiveText.selectedItemPosition
         //println("Objetivo: ${objectiveList[selectedObjective]}")
 
         val result = weight / (height / 100).pow(2)
@@ -149,18 +150,21 @@ class MainActivity : AppCompatActivity() {
 
         //val activities = resources.getStringArray(R.array.arrayActivities)
 
-        acLevelAutoComplete.setOnItemClickListener { parent, view, position, id ->
-            activity = position
-        }
+//        acLevelAutoComplete.setOnItemClickListener { parent, view, position, id ->
+//            activity = position
+//        }
 
 
         objectiveText = findViewById(R.id.objectiveAutoComplete)
+
+
+
         // Create the instance of ArrayAdapter
         val objectiveList = resources.getStringArray(R.array.arrayObjective)
         val objectiveSpinnerAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, objectiveList)
         // set simple layout resource file for each item of spinner
-        objectiveSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        objectiveSpinner.adapter = objectiveSpinnerAdapter
+//        objectiveSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+//        objectiveSpinner.adapter = objectiveSpinnerAdapter
 
         calculateButton.setOnClickListener {
             calculateBMI()
