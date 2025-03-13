@@ -2,33 +2,26 @@ package com.example.hbcalculator
 
 class HBFormula {
 
-    // calcular el metabolismo basal
-
-    fun calculateBMR(weight: Float, height: Float, age: Int, isMale: Boolean): Double {
-        val bmr = if (isMale) {
-            // Fórmula de Harris-Benedict para hombres
-            66 + (13.75 * weight) + (5 * height) - (6.75 * age)
-        } else {
-            // Fórmula de Harris-Benedict para mujeres
-            655 + (9.56 * weight) + (1.85 * height) - (4.68 * age)
+        fun calculateBMR(weight: Float, height: Float, age: Int, isMale: Boolean): Float {
+            return if (isMale) {
+                // Fórmula de Harris-Benedict para hombres
+                66.5f + (13.75f * weight) + (5.003f * height) - (6.75f * age)
+            } else {
+                // Fórmula de Harris-Benedict para mujeres
+                655f + (9.563f * weight) + (1.850f * height) - (4.676f * age)
+            }
         }
 
-        return bmr
-    }
-
-
-    // calorías según el nivel de actividad
-    fun calculateCalories(bmr: Int, activityLevel: String?): Double {
-        var factor = 1.0
-
-        factor = when (activityLevel) {
-            "light" -> 1.2
-            "moderate" -> 1.375
-            "intense" -> 1.55
-            "very_intense" -> 1.725
-            else -> 1.0 // Para balance, sin cambio
+        fun calculateTDEE(bmr: Float, activityLevel: Int): Float {
+            val activityMultiplier = when (activityLevel) {
+                0 -> 1.2f // Sedentario
+                1 -> 1.375f // Ligera actividad
+                2 -> 1.55f // Actividad moderada
+                3 -> 1.725f // Alta actividad
+                4 -> 1.9f // Actividad extrema
+                else -> 1.2f // Default
+            }
+            return bmr * activityMultiplier
         }
-
-        return bmr * factor
     }
-}
+

@@ -13,14 +13,15 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.hbcalculator.HBFormula
 import com.example.hbcalculator.R
 import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var ageTextField: TextInputEditText
+    lateinit var ageTextField: TextInputLayout
     lateinit var maleButton: Button
     lateinit var femaleButton: Button
-    lateinit var heightTextField: TextInputEditText
-    lateinit var weightTextField: TextInputEditText
+    lateinit var heightTextField: TextInputLayout
+    lateinit var weightTextField: TextInputLayout
 
     lateinit var activityLevel: AutoCompleteTextView
     lateinit var objectiveText: AutoCompleteTextView
@@ -65,11 +66,10 @@ class MainActivity : AppCompatActivity() {
 
         private fun calculateCalories() {
 
-            val weight = weightTextField.text.toString().toFloat()
-            val height = heightTextField.text.toString().toFloat()
-            val age = ageTextField.text.toString().toInt()
+            val weight = weightTextField.editText!!.text.toString().toFloat()
+            val height = heightTextField.editText!!.text.toString().toFloat()
+            val age = ageTextField.editText!!.text.toString().toInt()
 
-            val isMale = true // Asume hombre o mujer, lo puedes hacer con un RadioButton
 
             // Usar HBFormula para obtener el BMR
             val calculator = HBFormula()
@@ -81,10 +81,10 @@ class MainActivity : AppCompatActivity() {
             val activityLevelText = activityLevel.text.toString()
 
             // Si el usuario selecciona "Mantener peso", mostrar directamente el resultado en la pantalla principal
-            if (activityLevelText == "Mantener peso") {
+            if (activityLevelText == "Maintain current weight") {
                 balanceResult?.text  = getString(R.string.balance) + " $bmr kcal/day"
             } else {
-                // Si es otra opción, redirigir a la actividad de resultados
+                // Redirigir a ResultActivity
                 val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra("BMR", bmr)
                 intent.putExtra("ActivityLevel", activityLevelText)
