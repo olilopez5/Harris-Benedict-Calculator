@@ -91,7 +91,7 @@
     </TableLayout>
     <Space
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="100dp"/>
 
     <TextView
         android:id="@+id/deficitResult"

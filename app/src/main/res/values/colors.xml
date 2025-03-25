@@ -5,13 +5,15 @@
     <color name="primary">#85BCB9</color>
     <color name="background">#FFFFFF</color>
     <color name="bmi_normal">#B3ADE982</color>
+    <color name="gender_selected">#699E6DDD</color>
 
-    <color name="header_table">#F0CEEB</color>
 
-    <color name="light_x">#BB76BCEB</color>
-    <color name="moderate_x">#B3ADE982</color>
-    <color name="aggressive_x">#A1EBB218</color>
-    <color name="very_aggressive_x">#ABF66C42</color>
+    <color name="header_table">#699E6DDD</color>
+
+    <color name="light_x">#B3ADE982</color>
+    <color name="moderate_x">#C99CE767</color>
+    <color name="aggressive_x">#8C4EAF07</color>
+    <color name="very_aggressive_x">#A13B8705</color>
 
     <color name="bmi_obesity3">#E93535</color>
 
