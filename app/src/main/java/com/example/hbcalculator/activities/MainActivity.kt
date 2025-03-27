@@ -2,6 +2,7 @@ package com.example.hbcalculator.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
@@ -81,6 +82,9 @@ class MainActivity : AppCompatActivity() {
             if (activityLevelText == "Maintain current weight") {
                 // Mostrar el resultado en la MainActivity (en vez de redirigir a ResultActivity)
                 balanceResult?.text = getString(R.string.balance) + " $bmr kcal/day"
+                val balanceResult = intent.getDoubleExtra("bmr", 0.0)
+                Log.i("ResultActivity", "Valor de balanceResult: $balanceResult")
+
             } else {
                 // Si no es "Mantener peso", hacer lo que desees (por ejemplo, redirigir a ResultActivity)
                 val intent = Intent(this, ResultActivity::class.java)

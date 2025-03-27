@@ -1,4 +1,5 @@
 package com.example.hbcalculator.activities
+import android.content.Intent
 import com.example.hbcalculator.R
 import android.os.Bundle
 import android.widget.TextView
@@ -33,7 +34,13 @@ class ResultActivity : AppCompatActivity() {
         veryAggressiveDeficit = findViewById(R.id.deficitVeryAggressive)
 
          //Obtener el valor de las calorías desde el Intent
-        val balanceResult = intent.getDoubleExtra("caloriesResult", 0.0)
+//        val intent = Intent(this, ResultActivity::class.java)
+//        intent.putExtra("bmr", bmr) // Asegúrate de que 'bmr' tenga un valor válido
+//        startActivity(intent)
+
+
+        val balanceResult = intent.getDoubleExtra("bmr", 0.0)
+
 
         // Calcular y mostrar los resultados
         lightSurplus.setText((balanceResult + 200).toString() + " kcal/día")
